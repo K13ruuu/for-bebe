@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FBEEEE">
+<title>For Bebe 🌹</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌹</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="petal-field back" id="petalFieldBack" aria-hidden="true"></div>
+  <div class="petal-field front" id="petalFieldFront" aria-hidden="true"></div>
+
+  <section id="gate" class="screen gate">
+
+    <div class="progress-dots" id="progressDots">
+      <span class="dot" data-step="0"></span>
+      <span class="dot" data-step="1"></span>
+      <span class="dot" data-step="2"></span>
+      <span class="dot" data-step="3"></span>
+    </div>
+
+    <div class="gate-stage">
+
+      <div class="gate-step active" data-step="0">
+        <p class="q-eyebrow">psst&hellip;</p>
+        <h2 class="q-title">Hey, why are you here?</h2>
+        <div class="q-options">
+          <button class="q-option" data-reaction="Yes it is! 🎂">It's my birthday</button>
+          <button class="q-option" data-reaction="Fair enough. Let's find out together 👀">I don't know</button>
+          <button class="q-option" data-reaction="Suspicious, but okay 😄">Someone told me to come here</button>
+        </div>
+        <p class="q-reaction"></p>
+      </div>
+
+      <div class="gate-step" data-step="1">
+        <p class="q-eyebrow">okay next</p>
+        <h2 class="q-title">Any guesses what this is?</h2>
+        <div class="q-options">
+          <button class="q-option" data-reaction="Close enough 👏">A surprise</button>
+          <button class="q-option" data-reaction="You'll see in a second 🌹">No idea</button>
+          <button class="q-option" data-reaction="I like the optimism ✨">Something cute, I hope</button>
+        </div>
+        <p class="q-reaction"></p>
+      </div>
+
+      <div class="gate-step" data-step="2">
+        <p class="q-eyebrow">last question</p>
+        <h2 class="q-title">Are you ready?</h2>
+        <div class="q-options">
+          <button class="q-option" data-reaction="That's what I like to hear 🥹">Always</button>
+          <button class="q-option" data-reaction="Good enough for me 😏">Maybe</button>
+          <button class="q-option" data-reaction="Okay okay, here we go 🎁">Just show me already</button>
+        </div>
+        <p class="q-reaction"></p>
+      </div>
+
+      <div class="gate-step gift-step" data-step="3">
+        <p class="q-eyebrow">one more thing</p>
+        <h2 class="q-title">There's a present for you</h2>
+        <p class="q-sub" id="giftHint">tap it <span id="tapCount">3</span> times to open</p>
+
+        <button class="gift-box" id="giftBox" aria-label="Tap to open your present">
+          <span class="gift-bow">🎀</span>
+          <span class="gift-lid"></span>
+          <span class="gift-body">
+            <span class="gift-ribbon-v"></span>
+          </span>
+          <span class="gift-glow"></span>
+        </button>
+
+        <div class="confetti-burst" id="confettiBurst" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <main id="main" class="hidden">
+    <div class="main-stage">
+
+      <section class="main-step active" data-step="menu" id="step-menu">
+        <p class="q-eyebrow">inside your gift</p>
+        <h2 class="q-title">Three little surprises</h2>
+        <p class="q-sub" id="menuHint">open all three</p>
+
+        <div class="menu-tiles">
+          <button class="menu-tile" id="tileCard" data-modal="modalCard">
+            <span class="tile-icon">💌</span>
+            <span class="tile-label">Your Card</span>
+            <span class="tile-check">✓</span>
+          </button>
+          <button class="menu-tile" id="tileCollage" data-modal="modalCollage">
+            <span class="tile-icon">🖼️</span>
+            <span class="tile-label">Our Moments</span>
+            <span class="tile-check">✓</span>
+          </button>
+          <button class="menu-tile" id="tileVideo" data-modal="modalVideo">
+            <span class="tile-icon">🎥</span>
+            <span class="tile-label">Camera Roll</span>
+            <span class="tile-check">✓</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="main-step" data-step="cake" id="step-cake">
+        <p class="q-eyebrow">one last thing</p>
+        <h2 class="q-title">Make a wish</h2>
+        <p class="q-sub">then blow out the candle</p>
+
+        <div class="cake" id="cakeEl">
+          <div class="cake-smoke" id="cakeSmoke"></div>
+
+          <div class="candle">
+            <span class="flame" id="flame"></span>
+            <span class="wick"></span>
+          </div>
+
+          <div class="layer layer-3"><div class="frosting"></div></div>
+          <div class="layer layer-2"><div class="frosting"></div></div>
+          <div class="layer layer-1">
+            <div class="frosting"></div>
+            <div class="drip"></div>
+          </div>
+
+          <div class="cake-plate"></div>
+        </div>
+
+        <button class="blow-btn" id="blowBtn">
+          <span id="blowBtnLabel">hold to blow 💨</span>
+        </button>
+      </section>
+
+      <section class="main-step" data-step="final" id="step-final">
+        <div class="bouquet" id="bouquet">🌹🌹🌹🌹🌹</div>
+        <h2 class="closing-title">Happy Birthday, Bebe</h2>
+        <p class="closing-sub">I love you.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- CARD -->
+  <div class="modal" id="modalCard">
+    <button class="modal-close" data-close="modalCard" aria-label="Close">×</button>
+    <div class="card-book-wrap">
+      <div class="card-book" id="card3d">
+        <div class="card-page card-inside">
+          <div class="rose-bloom" id="roseBloom">
+            <span class="petal-svg p1">🌸</span>
+            <span class="petal-svg p2">🌸</span>
+            <span class="petal-svg p3">🌸</span>
+            <span class="petal-svg p4">🌸</span>
+            <span class="petal-svg p5">🌸</span>
+          </div>
+          <p class="handwritten">
+            Every year I get to love you a little more than the year before.
+            Today is all about you — my sweet, rose-loving girl.
+            <br><br>
+            Happy Birthday. I love you endlessly.
+          </p>
+          <p class="signed">— yours, always</p>
+        </div>
+
+        <button class="card-page card-front" id="cardFront" aria-label="Open card">
+          <div class="card-roses">🌹🌹🌹</div>
+          <h1 class="card-title">Happy Birthday</h1>
+          <p class="card-name js-name">Bebe</p>
+          <p class="card-tap">tap to open</p>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLAGE -->
+  <div class="modal" id="modalCollage">
+    <button class="modal-close" data-close="modalCollage" aria-label="Close">×</button>
+    <h2 class="section-title">Our Moments</h2>
+    <p class="section-sub">tap a photo to zoom in</p>
+    <div class="polaroid-field" id="polaroidField"></div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="modal" id="modalVideo">
+    <button class="modal-close" data-close="modalVideo" aria-label="Close">×</button>
+    <h2 class="section-title">A little something to watch</h2>
+    <div class="video-frame">
+      <video id="birthdayVideo" controls playsinline poster="assets/photos/video-poster.jpg">
+        <source src="assets/video/message.mp4" type="video/mp4">
+      </video>
+      <div class="video-placeholder" id="videoPlaceholder">
+        <span class="video-icon">🎬</span>
+        <p>Drop <code>message.mp4</code> into <code>assets/video/</code></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <audio id="cardAudio" preload="none">
+    <source src="assets/music/birthday-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
